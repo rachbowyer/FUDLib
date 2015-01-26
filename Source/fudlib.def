@@ -1,0 +1,116 @@
+;
+;	fudlib.def Module Definition file
+;	Copyright (C) 2000 Rachel Bowyer.
+;
+;	Author: Rachel Bowyer (rachbowyer@gmail.com)
+;
+;	This program is free software; you can redistribute it and/or modify
+;	it under the terms of the GNU General Public License version 2 as published by
+;	the Free Software Foundation.
+;
+;	This program is distributed in the hope that it will be useful,
+;	but WITHOUT ANY WARRANTY; without even the implied warranty of
+;	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;	GNU General Public License for more details.
+;
+;   	You should have received a copy of the GNU General Public License
+;   	along with this program; if not, write to the Free Software
+;   	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+;
+
+
+
+LIBRARY		fudlib
+DESCRIPTION	'fudlib.dll'
+EXPORTS
+	fudlib_absdbl
+	fudlib_absflt
+	fudlib_absint
+	fudlib_abssml
+	fudlib_maxdbl
+	fudlib_maxflt
+	fudlib_maxint
+	fudlib_maxsml
+	fudlib_mindbl
+	fudlib_minflt
+	fudlib_minint
+	fudlib_minsml
+	fudlib_cos
+	fudlib_acos
+	fudlib_sin
+	fudlib_asin
+	fudlib_tan
+	fudlib_atan
+	fudlib_atan2
+	fudlib_ceiling
+	fudlib_floor
+	fudlib_degrees
+	fudlib_radians
+	fudlib_exp
+	fudlib_fact
+	fudlib_PI
+	fudlib_log
+	fudlib_log10
+	fudlib_pow
+	fudlib_pow10
+	fudlib_round
+	fudlib_udftruncate
+	fudlib_truncate
+	fudlib_sqrt
+	fudlib_modquot
+	fudlib_modrem
+	fudlib_ver
+	fudlib_fud_ver
+	fudlib_alltrim
+	fudlib_fud_alltrim
+	fudlib_alltrimc
+	fudlib_ltrim
+	fudlib_fud_ltrim
+	fudlib_ltrimc
+	fudlib_rtrim
+	fudlib_fud_rtrim
+	fudlib_rtrimc
+	fudlib_soundex
+	fudlib_pad
+	fudlib_lpad
+	fudlib_centre
+	fudlib_len
+	fudlib_lower
+	fudlib_stradd	
+	fudlib_strdel
+	fudlib_cstr_plus_int
+	fudlib_int_plus_cstr
+	fudlib_cstr_to_dbl
+	fudlib_ascii
+	fudlib_chr
+	fudlib_parse
+	fudlib_pos
+	fudlib_proper
+	fudlib_reverse
+	fudlib_lefts
+	fudlib_rights
+	fudlib_substr
+	fudlib_replicate
+	fudlib_ttoc
+	fudlib_mer_year
+	fudlib_mer_month
+	fudlib_month_of_year
+	fudlib_mer_day
+	fudlib_dow
+	fudlib_day_of_week
+	fudlib_julian
+	fudlib_mer_hour
+	fudlib_mer_minute
+	fudlib_sec
+	fudlib_msec
+	fudlib_maxtime
+	fudlib_zerotime
+	fudlib_firstday
+	fudlib_lastday
+	fudlib_week
+	fudlib_quarter
+	fudlib_addtime
+	fudlib_subtime
+	fudlib_makedate
+	fudlib_diffdate
+

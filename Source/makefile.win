@@ -1,0 +1,61 @@
+#
+#	makefile - Build the dll
+#	Copyright (C) 2000 Rachel Bowyer.
+#
+#	Author: Rachel Bowyer (rachbowyer@gmail.com)
+#
+#	This program is free software; you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation; either version 2 of the License, or
+#	any later version.
+#
+#	This program is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#   	You should have received a copy of the GNU General Public License
+#   	along with this program; if not, write to the Free Software
+#   	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+
+
+
+# Windows NT
+CP=copy
+CC=bcc32
+LD=ilink32
+INCLUDE=-I"/Program Files/Borland/Interbase/Sdk/Include"
+CFLAGS=-x- -RT- -O1 -c -v- -w+ -a4 -tWM -DWIN32 $(INCLUDE)
+FUDIBUTILLIB=fud_ib_util.lib
+LIBRARYS=import32.lib cw32mt.lib "/Program Files/Borland/Interbase/Sdk/Lib/gds32.lib" $(FUDIBUTILLIB)
+LINKFLAGS=/x /Tpd
+STARTUP=c0d32.obj
+MODULEDEF=fudlib.def
+TARGETNAME=fudlib
+IBUTIL="/Program Files/Borland/Interbase/bin/ib_util.dll"
+TARGET=$(TARGETNAME).dll
+OBJS=fudlib.obj
+RM=cmd /c del
+IMPLIB=implib
+IMPLIBFLAGS=-a
+INSTALLTO="/Program Files/Borland/Interbase/Udf"
+
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS) $(MODULEDEF) $(FUDIBUTILLIB)
+	$(LD) $(LINKFLAGS) $(STARTUP) $(OBJS),$(TARGET),, $(LIBRARYS), $(MODULEDEF)
+
+$(FUDIBUTILLIB): $(IBUTIL)
+	$(IMPLIB) $(IMPLIBFLAGS) $(FUDIBUTILLIB) $(IBUTIL)
+
+%.obj : %.cpp;
+	$(CC) $(CFLAGS)	$<
+
+install: $(TARGET)
+	$(CP) $(TARGET) $(INSTALLTO)
+
+clean:
+	$(RM) $(OBJS) $(TARGET) $(TARGETNAME).i* $(TARGETNAME).tds *.lib
+

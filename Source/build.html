@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<TITLE>Readme</TITLE>
+</HEAD>
+<BODY>
+<H2>How to build FUDLibrary</H2>
+<BR>
+<H3>Windows</H3>
+<P>FUDLibrary is available as a Windows binary, but you are welcome to build it from the source code.  To build it you need the Borland C++ v5.5 compiler.
+  This compiler is available free from <A HREF="http://www.borland.com">Borland</A>.
+  In addition you need a copy of dmake.
+  dmake is available from <A HREF="http://www.wticorp.com/dmake/dmake.html">www.wticorp.com</A>.  
+A Win32 binary release of dmake was produced by Gurusamy Sarathy and is available from 
+<A HREF="http://www.cpan.org/authors/id/GSAR/dmake-4.1pl1-win32.zip">CPAN</A>. Type, for example,</P> 
+<P><CODE>dmake -f makefile.win install</CODE></P><P>to build.<BR>  
+The import library supplied for ib_util.dll is not compatible with BC55 so the makefile builds its own import library.</P>
+<BR>
+<BR>
+<H3>Unix</H3>
+FUDLibrary should compile on Linux and other Unix platforms without too many changes. As I don't currently have a Unix machine I am unable to test this. If you do write a Unix makefile please send it to me so I can include it in the next release.
+</BODY>
+</HTML>

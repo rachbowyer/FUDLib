@@ -1,0 +1,64 @@
+  
+    Message 316 of 322         Reply   
+  
+  Forward   
+  
+  View Source   
+  
+ 
+ 
+ 
+  
+
+From: Bill Karwin  <bill@k...>  
+Date: Wed Jun 14, 2000 5:05pm  
+Subject: Re: Missing API call  
+
+
+
+Here's a quick hack.  I've tested this and it works.
+
+Use these functions just like you would use the current
+isc_decode_{date,time,timestamp} API calls, but pass an address to the
+new struct, instead of stuct tm.  For example,
+
+	tm_msec tmm;
+	isc_decode_timestamp_millisecond(out_xsqlvar->sqldata, &tmm);
+	printf("Seconds: %d, milliseconds: %d\n", tmm.tm.tm_sec, tmm.msec);
+
+-----------------------%<-----------------------
+
+typedef struct {
+  struct tm tm;
+  long msec;
+} tm_msec;
+
+isc_decode_timestamp_milliseconds(ISC_QUAD *quadp, tm_msec *tmmp)
+{
+        isc_decode_date(quadp, &(tmmp->tm));
+        // printf("decode: usec = %ld\n", (quadp->isc_quad_low %
+10000)*100);
+        tmmp->msec = (long)((quadp->isc_quad_low % 10000) / 10);
+}
+
+isc_decode_sql_time_milliseconds(ISC_TIME *timep, tm_msec *tmmp)
+{
+        isc_decode_sql_time(timep, &(tmmp->tm));
+        // printf("decode: usec = %ld\n", (*timep % 10000)*100);
+        tmmp->msec = (long)((*timep % 10000) / 10);
+}
+
+-----------------------%<-----------------------
+
+Writing isc_encode_*_milliseconds() is left as an exercise for the
+reader.  ;-)
+
+Regards,
+Bill Karwin
+
+
+ 
+
+ 
+ 
+ 

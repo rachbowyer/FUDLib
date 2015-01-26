@@ -1,0 +1,1503 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>FUDLibrary</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1 align="center"><b>FUDLibrary</b></h1>
+
+<hr>
+
+<p><a href="#Absolutevalue min,max"
+target="Absolute value, min, max">Absolute value, min, max</a><br>
+<a href="#TrigandNum">Trig and Numeric functions</a><br>
+<a href="#Versionfunctions">Version functions</a><br>
+<a href="#TrimAndPad">Trim and Pad functions</a><br>
+<a href="#Otherstringfunctions">Other string functions</a><br>
+<a href="#Datefunctions">Date functions</a></p>
+
+<hr>
+
+<h2><a name="Absolutevalue min,max"><b>Absolute value, min, max</b></a></h2>
+
+<h3><br>
+absdbl(a), absflt(a), absint(a), abssml(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function absdbl double
+precision returns double precision by value<br>
+function<strong> </strong>absflt float returns float by value<br>
+function absint integer returns integer by value<br>
+function<strong> </strong>abssml smallint returns smallint by
+value</font></p>
+
+<h4 style="font-weight: medium"><i>Description</i></h4>
+
+<p style="font-weight: medium">Returns the absolute value.</p>
+
+<p style="font-weight: medium">&nbsp;</p>
+
+<h3 style="font-weight: medium"><strong>mindbl(a,b), minflt(a,b),
+minint(a,b), minsml(a,b)</strong></h3>
+
+<h4><strong>Declaration</strong></h4>
+
+<p><font size="2" face="Courier New">function mindbl double
+precision, double precision returns double precision by value<br>
+function minflt float, float returns float by value<br>
+function minint integer, integer returns integer by value<br>
+function minsml smallint, smallint returns smallint by value</font></p>
+
+<p><strong>Description</strong></p>
+
+<p style="margin-bottom: 0in; font-weight: medium">Returns the
+minimum value.</p>
+
+<p style="margin-bottom: 0in; font-weight: medium">&nbsp;</p>
+
+<h3 style="margin-bottom: 0in; font-weight: medium">maxdbl(a,b),
+maxflt(a,b), maxint(a,b), maxsml(a,b)</h3>
+
+<h4>Declaration</h4>
+
+<p style="margin-bottom: 0in"><font size="2" face="Courier New">function
+maxdbl double precision, double precision returns double
+precision by value<strong><br>
+</strong>function maxflt float, float returns float by value<br>
+function maxint integer, integer returns integer by value<br>
+function maxsml smallint, smallint returns smallint by value</font></p>
+
+<p style="margin-bottom: 0in"><strong>Description</strong></p>
+
+<p style="font-weight: medium">Returns the maximum value.</p>
+
+<p style="font-weight: medium">&nbsp;</p>
+
+<h2 style="font-weight: medium"><a name="TrigandNum">Trig and
+Numeric functions</a></h2>
+
+<h3 style="font-weight: medium"><br>
+fud_cos(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_cos double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the cosine of a. a is in radians.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib cos function.</p>
+
+<p>&nbsp;</p>
+
+<h3><strong>fud_acos(a)</strong></h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_acos double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the arccosine of a in radians. a must be in the range
+-1 &lt;= a &lt;= 1.</p>
+
+<h4>Error condition</h4>
+
+<p>If a is not in the correct range then -999999 is returned.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib acos function.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_sin(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_sin double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the sine of a. a is in radians.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib sin function.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_asin(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">declare external function
+fud_asin double precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the arcsine of a in radians. a must be in the range -1
+&lt;= a &lt;= 1.</p>
+
+<h4>Error condition</h4>
+
+<p>If a is not in the correct range then -999999 is returned.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib asin function.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_tan(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_tan double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the tangent of a. a is in radians.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib tan function.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_atan(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_atan double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the arctangent of a in radians. </p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib atan function.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_atan2(a, b)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_atan2 double
+precision, double precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the arctangent of a / b in radians. b must satisfy b
+&lt;&gt; 0.</p>
+
+<h4>Error condition</h4>
+
+<p>If b is zero then -999999 is returned.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib atan2 function.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_ceiling(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function ceiling double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the smallest integer bigger than or equal to a.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib ceiling function.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_floor(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_floor double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the largest integer smaller than or equal to a.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib floor function.</p>
+
+<p>&nbsp;</p>
+
+<h3>degrees(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function degrees double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Converts a from radians into degrees.</p>
+
+<p>&nbsp;</p>
+
+<h3>radians(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function radians double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Converts a from degrees into radians.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_PI</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_PI returns
+double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns PI.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib PI function.</p>
+
+<p>&nbsp;</p>
+
+<h3>fact(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fact double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Converts a to an integer by truncation and then returns the
+factorial of a. a must be in the range 0&lt;= a &lt; 101.</p>
+
+<h4>Error condition</h4>
+
+<p>If a is not in range then -999999 is returned.</p>
+
+<p>&nbsp;</p>
+
+<h3>exp(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function exp double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns e to the power of a. a must be in the range -700 &lt;=
+a &lt; 700.</p>
+
+<h4>Error condition</h4>
+
+<p>If a is not in range then -999999 is returned.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_log(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_log double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the natural logarithm of a. a must be bigger than or
+equal to 1.0e-304.</p>
+
+<h4>Error condition</h4>
+
+<p>If a is not in range then -999999 is returned.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib log function.</p>
+
+<p>&nbsp;</p>
+
+<h3>pow10(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function pow10 double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns 10 to the power of a. a must be in the range -305 &lt;=
+a &lt; 305.</p>
+
+<h4>Error condition</h4>
+
+<p>If a is not in range then -999999 is returned.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_log10(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">declare external function
+fud_log10 double precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the logarithm to base 10 of a. a must be bigger than
+or equal to 1.0e-304.</p>
+
+<h4>Error condition</h4>
+
+<p>If a is not in range then -999999 is returned.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib log10 function.</p>
+
+<p>&nbsp;</p>
+
+<h3>pow(a, b)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function pow double
+precision, double precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns a to the power of b. a must be greater than or equal
+to 0.</p>
+
+<h4>Error condition</h4>
+
+<p>If a is not in range then -999999 is returned.</p>
+
+<p>&nbsp;</p>
+
+<h3>round(a, b)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function round double
+precision, integer returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Rounds a to b decimal places. If b is negative then a is
+rounded to a value of the order 10^-b. For example <font size="2"
+face="Courier New">round(723.123, -2)</font> is 700. b must be in
+the range -304 &lt; b &lt; 304.</p>
+
+<h4>Error condition</h4>
+
+<p>If b is not in range then -999999 is returned.</p>
+
+<p>&nbsp;</p>
+
+<h3>truncate(a, b)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function truncate double
+precision, integer returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Truncates a to b decimal places. a is always truncated
+downwards even if a is negative. If b is negative then a is
+truncated to a value of the order 10^-b. For example <font
+size="2" face="Courier New">truncate(-723.123, -2)</font> is -800.
+b must be in the range -304 &lt; b &lt; 304.</p>
+
+<h4>Error condition</h4>
+
+<p>If b is not in range then -999999 is returned.</p>
+
+<p>&nbsp;</p>
+
+<h3>sqrt(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_sqrt double
+precision returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the square root of a. a must be equal to or greater
+than zero.</p>
+
+<h4>Error condition</h4>
+
+<p>If a is not in range then -999999 is returned.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib sqrt function.</p>
+
+<p>&nbsp;</p>
+
+<h3>modquot(a, b)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">declare external function
+modquot integer, integer returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the quotient when a is divided by b. b must not be
+equal to zero.</p>
+
+<h4>Error condition</h4>
+
+<p>If b is not in range then -999999 is returned.</p>
+
+<p>&nbsp;</p>
+
+<h3>modrem(a, b)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function modrem integer,
+integer returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the remainder when a is divided by b. b must not be
+equal to zero.</p>
+
+<h4>Error condition</h4>
+
+<p>If b is not in range then -999999 is returned.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="font-weight: medium"><a name="Versionfunctions">Version
+functions</a></h2>
+
+<h3>ver</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function ver returns double
+precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the version number of UDFLib that FUDLibrary emulates.
+As I have no idea what this number should be the function returns
+1.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_ver</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_ver returns
+integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the version number FUDLibrary multiplied by 100. For
+example if you have version 0.5 of FUDLibrary then this function
+returns 50.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="font-weight: medium"><a name="TrimAndPad">Trim and Pad
+functions</a></h2>
+
+<p>&nbsp;</p>
+
+<h3>alltrim(a), valltrim(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function alltrim cstring(256)
+returns cstring(256) free_it <br>
+function valltrim cstring(256) returns cstring(256) free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Trims any space characters (ascii value 32) from the start and
+the end of the string. Note other types of white space such as
+tabs are not stripped.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>valltrim is identical to alltrim and is provided for UDFLib
+compatibility</p>
+
+<p>&nbsp;</p>
+
+<h3>alltrimc(a, b), valltrimc(a, b)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function alltrimc cstring(256),
+char(1) returns cstring(256) free_it <br>
+function valltrimc cstring(256), cstring(1) returns cstring(256)
+free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Trims any character b from the start and the end of the string.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>valltrimc is identical to alltrimc and provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>vltrim(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function vltrim cstring(256)
+returns cstring(256) free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Trims any space characters (ascii value 32) from the start of
+the string. Note other types of white space such as tabs are not
+stripped.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib ltrim function.</p>
+
+<p>&nbsp;</p>
+
+<h3>ltrimc(a, b), vltrimc(a, b)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function ltrimc cstring(256),
+char(1) returns cstring(256) free_it <br>
+function vltrimc cstring(256), cstring(1) returns cstring(256)
+free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Trims any character b from the start of the string.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vltrimc is identical to ltrimc and is provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>vrtrim(a)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function vrtrim cstring(256)
+returns cstring(256) free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Trims any space characters (ascii value 32) from the end of
+the string. Note other types of white space such as tabs are not
+stripped.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>This function is the same as the UDFLib rtrim function.</p>
+
+<p>&nbsp;</p>
+
+<h3>rtrimc(a, b), vrtrimc(a, b)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function rtrimc cstring(256),
+char(1) returns cstring(256) free_it <br>
+function vrtrimc cstring(256), cstring(1) returns cstring(256)
+free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Trims any character b from the end of the string.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vrtrimc is identical to rtrimc and is provided for UDFLib
+compatibility</p>
+
+<p>&nbsp;</p>
+
+<h3>pad(str, c, n), vpad(str, c, n)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function pad cstring(256),
+cstring(1), integer returns cstring(256) free_it <br>
+function vpad cstring(256), cstring(1), integer returns cstring(256)
+free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Pads the end of the str with character c until it is n
+characters long.</p>
+
+<h4>Error condition</h4>
+
+<p>If c is empty, or n is less than the length of the string or n
+&gt; 255 then the function returns &quot;Bad parameters in rpad&quot;.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vpad is identical to pad and is provided for UDFLib
+compatibility</p>
+
+<p>&nbsp;</p>
+
+<h3>lpad(str, c, n), vlpad(str, c, n)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function lpad cstring(256),
+cstring(1), integer returns cstring(256) free_it <br>
+function vlpad cstring(256), cstring(1), integer returns cstring(256)
+free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Pads the start of the str with character c until it is n
+characters long.</p>
+
+<h4>Error condition</h4>
+
+<p>If c is empty, or n is less than the length of the string or n
+&gt; 255 then the function returns &quot;Bad parameters in lpad&quot;.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vlpad is identical to lpad and is provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>centre(str, c, n), vcentre(str, c, n), center(str, c, n),
+vcenter(str, c, n)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function centre cstring(256),
+cstring(1), integer returns cstring(256) free_it <br>
+function vcentre cstring(256), cstring(1), integer returns
+cstring(256) free_it <br>
+function center cstring(256), cstring(1), integer returns cstring(256)
+free_it <br>
+function vcenter cstring(256), cstring(1), integer returns
+cstring(256) free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Pads the start and end of the str with character c until it is
+n characters long.</p>
+
+<h4>Error condition</h4>
+
+<p>If c is empty, or n is less than the length of the string or n
+&gt; 255 then the function returns &quot;Bad parameters in center&quot;.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vcentre, center, vcenter are identical to center and are
+provided for UDFLib compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="font-weight: medium"><a name="Otherstringfunctions">Other
+string functions</a></h2>
+
+<p style="font-weight: medium">&nbsp;</p>
+
+<h3>soundex(str)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_soundex cstring(256)
+returns cstring(256) free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Converts a string into its Soundex Code. This function uses
+the Soundex Algorothm described by Donald Knuth in The Art of
+Computer Programming Volume 3. The file <font size="2"
+face="Courier New">examples/soundex.sql</font> gives an example
+of how to use the fud_soundex function to do 'sounds like'
+searching.</p>
+
+<p>&nbsp;</p>
+
+<h3>len(str), vlen(str)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function len cstring(256)
+returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the length of str.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vlen is identical to len and is provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>fud_lower(str), vlower(str)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function fud_lower cstring(256)
+returns cstring(256)<br>
+function vlower cstring(256) returns cstring(256)</font></p>
+
+<h4>Description</h4>
+
+<p>Converts the string to lower case.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vlower is identical to fud_lower and is provided for UDFLib
+compatibility</p>
+
+<p>&nbsp;</p>
+
+<h3>cstradd(str1, str2), vcharadd(str1, str2)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function cstradd cstring(256),cstring(256)
+returns cstring(512) free_it<br>
+function vcharadd cstring(256),cstring(256) returns cstring(512)
+free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Concatenates str1 and str2.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vcharadd is identical to cstradd and is provided for UDFLib
+compatibility</p>
+
+<p>&nbsp;</p>
+
+<h3>cstrdel(str, pos, substr_len), vchardel(str, pos, substr_len)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function cstrdel cstring(256),
+integer, integer returns cstring(256) free_it<br>
+function vchardel cstring(256), integer, integer returns cstring(256)
+free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Deletes the substring of length <font size="2"
+face="Courier New">substr_len</font> characters which starts at
+character <font size="2" face="Courier New">pos</font> from
+string <font size="2" face="Courier New">str</font>. <font
+size="2" face="Courier New">pos</font> is zero based.</p>
+
+<h4>Error condition</h4>
+
+<p>If <font size="2" face="Courier New">pos</font> &lt; 0 or <font
+size="2" face="Courier New">substr_len</font> &lt; 0 or the
+substring extends beyond the end of the string then <font
+size="2" face="Courier New">&quot;Bad paramaters in chrdelete&quot;</font>
+is returned instead.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vchardel is identical to cstrdel and is provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>cstr_plus_int(str, num)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function cstr_plus_int
+cstring(256), integer returns cstring(256) free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Appends num on to the end of str. The resulting string must be
+less than 255 characters long.</p>
+
+<h4>Error condition</h4>
+
+<p>If the resulting string would exceed 255 characters then <font
+size="2" face="Courier New">&quot;Bad parameters in cstr_plus_int&quot;</font>
+is returned instead.</p>
+
+<p>&nbsp;</p>
+
+<h3>int_plus_cstr(str, num)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function int_plus_cstr
+cstring(256), integer returns cstring(256) free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Adds num on to the start of str. The resulting string must be
+less than 255 characters long.</p>
+
+<h4>Error condition</h4>
+
+<p>If the resulting string would exceed 255 characters then <font
+size="2" face="Courier New">&quot;Bad parameters in
+cstr_int_plus_cstr&quot;</font> is returned instead.</p>
+
+<p>&nbsp;</p>
+
+<h3>cstr_to_double(str)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function cstr_to_dbl cstring(256)
+returns double precision by value</font></p>
+
+<h4>Description</h4>
+
+<p>Converts the string to a double.</p>
+
+<p>&nbsp;</p>
+
+<h3>ascii(c)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function ascii cstring(1)
+returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the ascii value of c.</p>
+
+<p>&nbsp;</p>
+
+<h3>chr(n)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function chr integer returns
+cstring(1) free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Returns the character whose ascii value is n. n must be
+between 0 and 255.</p>
+
+<h4>Error condition</h4>
+
+<p>If n is out of range then <font size="2" face="Courier New">&quot;Value
+out of range&quot;</font> is returned instead.</p>
+
+<p>&nbsp;</p>
+
+<h3>parse(str, token, pos), vparse(str, token, pos)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function parse cstring(256),
+cstring(1), integer returns cstring(256) free_it<br>
+function vparse cstring(256), cstring(1), integer returns cstring(256)
+free_it </font></p>
+
+<h4>Description</h4>
+
+<p>This function views <font size="2" face="Courier New">str</font>
+as a series of substrings separated by the <font size="2"
+face="Courier New">token</font> character. It then returns the
+substring specified by <font size="2" face="Courier New">pos</font>.
+If <font size="2" face="Courier New">pos</font> is 1 then it
+returns the first substring etc.</p>
+
+<h4>Error condition</h4>
+
+<p>If <font size="2" face="Courier New">token</font> is empty or <font
+size="2" face="Courier New">pos </font>&lt; 1 then <font size="2"
+face="Courier New">&quot;Bad Paramaters in Parse&quot;</font> is
+returned. If pos is too large then it returns <font size="2"
+face="Courier New">&quot;Token to long in parse&quot;</font>.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vparse is identical to parse and is provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>pos(str, substr, start, occurrence), vpos(str, substr, start,
+occurrence)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function pos cstring(256),
+cstring(256), integer, integer returns integer by value<br>
+function vpos cstring(256), cstring(256), integer, integer
+returns integer by value </font></p>
+
+<h4>Description</h4>
+
+<p>Searches <font size="2" face="Courier New">str</font> for a
+substring <font size="2" face="Courier New">substr</font>. <font
+size="2" face="Courier New">start</font> is the zero based index
+to start the search. <font size="2" face="Courier New">occurrence</font>
+specifies which substring to find. If <font size="2"
+face="Courier New">occurrence</font> is 1 then the first
+substring is required. The function returns the zero based index
+of the substring.</p>
+
+<h4>Error condition</h4>
+
+<p>If the substring is not found then -1 is returned. If there is
+an error in the parameters then -999999 is returned.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vpos is identical to pos and is provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>proper(str), vproper(str)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function pos cstring(256),
+cstring(256), integer, integer returns integer by value<br>
+function vpos cstring(256), cstring(256), integer, integer
+returns integer by value </font></p>
+
+<h4>Description</h4>
+
+<p>Converts the first letter of every word to upper case. For
+example proper(&quot;david bowyer&quot;) would return &quot;David
+Bowyer&quot;.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vproper is identical to proper and is provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>reverse(str), vreverse(str)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function reverse cstring(256)
+returns cstring(256) free_it <br>
+function vreverse cstring(256) returns cstring(256) free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Returns the inversion of <font size="2" face="Courier New">str</font>.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vreverse is identical to reverse and is provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>lefts(str, num), vlefts(str, num)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function lefts cstring(256),
+integer returns cstring(256) free_it <br>
+function vlefts cstring(256), integer returns cstring(256)
+free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Returns the first <font size="2" face="Courier New">num</font>
+characters in <font size="2" face="Courier New">str</font>.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vlefts is identical to lefts and is provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>rights(str, num), vrights(str, num)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function rights cstring(256),
+integer returns cstring(256) free_it <br>
+function vrights cstring(256), integer returns cstring(256)
+free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Returns the last <font size="2" face="Courier New">num</font>
+characters in <font size="2" face="Courier New">str</font>.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vrights is identical to rights and is provided for UDFLib
+compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>substring(str, start, end), vsubstring(str, start, end)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function substring cstring(256),
+integer, integer returns cstring(256) free_it <br>
+function vsubstring cstring(256), integer, integer returns
+cstring(256) free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Returns the substring of <font size="2" face="Courier New">str</font>
+which starts at index <font size="2" face="Courier New">start</font>
+and finishes at index <font size="2" face="Courier New">end</font>.
+Both <font size="2" face="Courier New">start</font> and <font
+size="2" face="Courier New">end</font> are one based.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vsubstring is identical to substring and is provided for
+UDFLib compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h3>replicate(c, n), vreplicate(c, n)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function replicate cstring(1),
+integer returns cstring(256) free_it <br>
+function vreplicate cstring(1), integer returns cstring(256)
+free_it </font></p>
+
+<h4>Description</h4>
+
+<p>Returns a string of length <font size="2" face="Courier New">n</font>
+consisting of the character <font size="2" face="Courier New">c</font>.
+<font size="2" face="Courier New">n</font> must be in the range 0
+&lt;= <font size="2" face="Courier New">n</font> &lt;= 255. <font
+size="2" face="Courier New">c</font> must not be empty.</p>
+
+<h4>Error condition</h4>
+
+<p>If <font size="2" face="Courier New">c</font> is empty or <font
+size="2" face="Courier New">n</font> is out of range then <font
+size="2" face="Courier New">&quot;Bad parameters&quot;</font> is
+returned.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>vreplicate is identical to replicate and is provided for
+UDFLib compatibility.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="Datefunctions">Date functions</a></h2>
+
+<p>&nbsp;</p>
+
+<h3>mer_year(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function mer_year timestamp
+returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the year portion of the timestamp.</p>
+
+<p>&nbsp;</p>
+
+<h3>mer_month(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function mer_month timestamp
+returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the month portion of the timestamp as a number. 1 is
+January, 2 is February etc.</p>
+
+<p>&nbsp;</p>
+
+<h3>month_of_year(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function month_of_year
+timestamp returns cstring(255) free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the month portion of the timestamp as a string.</p>
+
+<p>&nbsp;</p>
+
+<h3>mer_day(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function mer_day timestamp
+returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the day in the month portion of the time stamp as an
+integer.</p>
+
+<p>&nbsp;</p>
+
+<h3>day_of_week(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function day_of_week
+timestamp returns cstring(255) free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the weekday name. e.g. Monday.</p>
+
+<p>&nbsp;</p>
+
+<h3>dow(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function dow timestamp
+returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Days since Sunday. (1 for Sunday, 2 for Monday, ...)</p>
+
+<p>&nbsp;</p>
+
+<h3>julian(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function julian timestamp
+returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Days since 1st January. (1 for 1st Jan, 2 for 2nd Jan, ...)</p>
+
+<p>&nbsp;</p>
+
+<h3>mer_hour(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function mer_hour timestamp
+returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Hour portion of the timestamp.</p>
+
+<p>&nbsp;</p>
+
+<h3>mer_minute(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function mer_minute
+timestamp returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Minute portion of the timestamp.</p>
+
+<p>&nbsp;</p>
+
+<h3>sec(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function sec timestamp
+returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Second portion of the timestamp.</p>
+
+<p>&nbsp;</p>
+
+<h3>msec(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function msec timestamp
+returns integer by value</font></p>
+
+<h4>Description</h4>
+
+<p>Millisecond portion of the timestamp. The implementation of
+this function relies on 'undocumented' information about the
+format of timestamps in Interbase.</p>
+
+<p>&nbsp;</p>
+
+<h3>maxtime(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function maxtime timestamp
+returns timestamp free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Sets the time portion of the timestamp to 23:59:59.9999. The
+day portion is left intact. The implementation of this function
+relies on 'undocumented' information about the format of
+timestamps in Interbase.</p>
+
+<p>&nbsp;</p>
+
+<h3>zerotime(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function zerotime timestamp
+returns timestamp free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Sets the time portion of the timestamp to 00:00:00.0000. The
+day portion is left intact. The implementation of this function
+relies on 'undocumented' information about the format of
+timestamps in Interbase.</p>
+
+<p>&nbsp;</p>
+
+<h3>firstday(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function firstday timestamp
+returns timestamp free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Sets the day portion of the timestamp to the first day of the
+month. Sets the time portion of the timestamp to 00:00:00.0000.
+The implementation of this function relies on 'undocumented'
+information about the format of timestamps in Interbase.</p>
+
+<p>&nbsp;</p>
+
+<h3>lastday(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function lastday timestamp
+returns timestamp free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Sets the day portion of the timestamp to the last day of the
+month. Sets the time portion of the timestamp to 23:59:59.9999.
+The implementation of this function relies on 'undocumented'
+information about the format of timestamps in Interbase.</p>
+
+<p>&nbsp;</p>
+
+<h3>week(ts)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function week timestamp
+returns int by value</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the week in the year as a number. (1 , 52)</p>
+
+<p>&nbsp;</p>
+
+<h3>quarter(ts, fiscalyear)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function quarter timestamp,
+integer returns cstring(255) free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the financial quarter the timestamp lies in. The
+format is YYQN where YY is the two digit year and N is from 1 to
+4. <font size="2" face="Courier New">fiscalyear</font> gives the
+start of the financial year. (1 for January, 2 for February,
+...). </p>
+
+<p>For example <font size="2" face="Courier New"><br>
+select quarter(CAST('1996-12-1' AS DATE), 1) from RDB$DATABASE </font><br>
+returns <font size="2" face="Courier New">&quot;96Q4&quot;.</font></p>
+
+<p>&nbsp;</p>
+
+<h3>addtime(ts, day, hour, min, sec, msec)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function add_time timestamp,
+integer, integer, integer, integer, integer returns timestamp
+free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Adds the time period specified by <font size="2"
+face="Courier New">day, hour, min, sec, msec</font> to the
+timestamp. Note none of the parameters is constrained. For
+example <font size="2" face="Courier New">hour </font><font
+size="3">could be 30.</font><br>
+The implementation of this function relies on 'undocumented'
+information about the format of timestamps in Interbase.</p>
+
+<p>&nbsp;</p>
+
+<h3>subtime(ts, day, hour, min, sec, msec)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function sub_time timestamp,
+integer, integer, integer, integer, integer returns timestamp
+free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Subtracts the time period specified by <font size="2"
+face="Courier New">day, hour, min, sec, msec</font> from the
+timestamp. Note none of the parameters is constrained. For
+example <font size="2" face="Courier New">hour </font><font
+size="3">could be 30.</font> The implementation of this function
+relies on 'undocumented' information about the format of
+timestamps in Interbase.</p>
+
+<p>&nbsp;</p>
+
+<h3>makedate(year, month, day, hour, min, sec)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function makedate integer,
+integer, integer, integer, integer, integer returns timestamp
+free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Creates a timestamp from <font size="2" face="Courier New">year,
+month, day, hour, min, sec</font>. Note none of the parameters is
+constrained. For example <font size="2" face="Courier New">hour </font><font
+size="3">could be 30.</font> The implementation of this function
+relies on 'undocumented' information about the format of
+timestamps in Interbase.</p>
+
+<p>&nbsp;</p>
+
+<h3>diffdate(ts1, ts2, control)</h3>
+
+<h4>Declaration</h4>
+
+<p><font size="2" face="Courier New">function makedate integer,
+integer, integer, integer, integer, integer returns timestamp
+free_it</font></p>
+
+<h4>Description</h4>
+
+<p>Returns the difference in time between the two timestamps. <font
+size="2" face="Courier New">control</font> specifies the units:<br>
+4 days<br>
+3 hours<br>
+2 minutes<br>
+1 seconds<br>
+0 milliseconds</p>
+
+<p>The implementation of this function relies on 'undocumented'
+information about the format of timestamps in Interbase.</p>
+
+<h4>Error condition</h4>
+
+<p>If control is not in the range (0, 4) then -999999 is returned.
+Also if the return value of this function would cause the integer
+to overflow then -999999 is returned instead.</p>
+
+<h4>UDFLib compatibility</h4>
+
+<p>UDFLib will happily let the return value of this function
+overflow. I view this as a defect in UDFLib and hence this
+function will not let the return value overflow. Any code which
+relies on this 'feature' will need to be changed.</p>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<h6>Copyright &copy Rachel Bowyer 2000.<br>
+Verbatim copying and distribution of this entire document is
+permitted in any medium, provided this notice is preserved.</h6>
+</body>
+</html>

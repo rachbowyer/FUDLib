@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+
+
+</HEAD>
+<BODY>
+<H3>Installation</H3>
+<P>
+</P>
+
+
+
+<H4>Adding FUDLibrary to an Interbase installation</H4>
+
+<P>There are two steps required to add FUDLibrary to an Interbase installation.
+<BR><BR>
+1) The file <CODE>fudlib.dll</CODE> must be copied to the Interbase UDF directory.  On my machine this directory is <CODE>\Program Files\Borland\Interbase\UDF</CODE>.
+<BR>
+2) The sql file <CODE>install.sql</CODE> must be executed against any databases that use FUDLibrary.  This is achieved by using the isql utility.
+<BR><BR>
+e.g.
+<BR>
+<CODE>
+connect /database/test USER 'sysdba' PASSWORD 'masterkey';<BR>
+in /FUDLibrary/install/install.sql;
+</CODE>
+</P>
+<BR>
+
+<H4>Mer UDFLib compatibility</H4>
+<P>
+There are a number of functions in UDFLib whose names clash with functions in <CODE>ib_udf.dll</CODE>, the UDF library provided with Interbase.  To enable FUDLibrary to be used in parallel with <CODE>ib_udf.dll</CODE>, I have used different names for the following functions in UDFLib: 
+</P>
+
+<TABLE>
+<TR>
+<TH>UDFLib</TH><TH>FUDLibrary</TH>
+</TR>
+<TR><TD>cos</TD><TD>fud_cos</TD></TR>
+<TR><TD>acos</TD><TD>fud_acos</TD></TR>
+<TR><TD>sin</TD><TD>fud_sin</TD></TR>
+<TR><TD>asin</TD><TD>fud_asin</TD></TR>
+<TR><TD>tan</TD><TD>fud_tan</TD></TR>
+<TR><TD>atan</TD><TD>fud_atan</TD></TR>
+<TR><TD>atan2</TD><TD>fud_atan2</TD></TR>
+<TR><TD>floor</TD><TD>fud_floor</TD></TR>
+<TR><TD>log</TD><TD>fud_log</TD></TR>
+<TR><TD>log10</TD><TD>fud_log10</TD></TR>
+<TR><TD>sqrt</TD><TD>fud_sqrt</TD></TR>
+<TR><TD>PI</TD><TD>fud_PI</TD></TR>
+<TR><TD>ltrim</TD><TD>vltrim</TD></TR>
+<TR><TD>rtrim</TD><TD>vrtrim</TD></TR>
+<TR><TD>lower</TD><TD>fud_lower</TD></TR>
+</TABLE>
+
+<P>
+If you need to use UDFLib names for these functions then execute the script <CODE>install_udflib_names.sql</CODE> against the appropriate database or databases.  
+</P>
+<BR>
+<H4>Removing FUDLibrary from your system</H4> 
+<P>
+To uninstall FUDLibrary do the following tasks.
+<BR><BR>
+1) If you executed <CODE>install_udflib_names.sql</CODE> against any database then execute the script <CODE>remove_udflib_names.sql</CODE> against that database.
+<BR>
+2) For each database which you ran <CODE>install.sql</CODE>, execute <CODE>remove.sql</CODE>.  
+<BR>
+3) Delete <CODE>fudlib.dll</CODE> from your Interbase UDF directory.
+</P>
+</BODY>
+</HTML>
+
+
+
+	
